@@ -1,161 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap</title>
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 </head>
 <style>
-  *{
-  margin: 0;
-  padding: 0;
-}
-footer{
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  line-height: 50px;
-}
-.navbar-brand{
-  background-color: rgb(194, 0, 0);
-  padding: 10px;
-}
-.navbar-brand:hover{
-  background-color: rgb(148, 96, 0);
-}
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    footer{
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        line-height: 50px;
+    }
+    .navbar-brand{
+        background-color: rgb(194, 0, 0);
+        padding: 10px;
+    }
+    .navbar-brand:hover{
+        background-color: rgb(148, 96, 0);
+    }
+
+    /* Custom styles for screens smaller than 750px */
+    @media (max-width: 749.98px) {
+        .navbar-nav.me-auto {
+            margin-right: 0 !important; /* Override Bootstrap's default margin on smaller screens */
+            margin-left: 0 !important;
+        }
+        .navbar-nav {
+            flex-direction: column; /* Stack nav items vertically */
+        }
+        .nav-item {
+            width: 100%; /* Make nav items take full width */
+            text-align: center;
+        }
+        .nav-link {
+            padding: 10px 0; /* Add some padding for better touch targets */
+        }
+        .dropdown-menu {
+            position: static !important; /* Fix dropdown positioning when collapsed */
+            float: none !important;
+            width: 100%;
+            margin-top: 0;
+            border: none;
+            box-shadow: none;
+        }
+        .dropdown-item {
+            text-align: center;
+        }
+        .navbar-nav.mb-2.mb-lg-0 {
+            width: 100%;
+        }
+        .navbar-nav:last-child { /* สำหรับเมนู Login/House icon */
+            width: 100%;
+            margin-top: 10px; /* Add some space above login/house icon */
+        }
+        .navbar-nav:last-child .nav-item {
+            display: inline-block; /* Keep them inline on smaller screens */
+            width: auto;
+        }
+        .navbar-nav:last-child .nav-link {
+            padding: 5px 10px;
+        }
+
+        /* Adjust columns for content section */
+        .content-row .col-md-3,
+        .content-row .col-md-5 {
+            width: 100%; /* Make all columns full width on small screens */
+            margin: 10px 0 !important; /* Adjust margins */
+        }
+        .nav.justify-content-center {
+            flex-direction: column; /* Stack navigation buttons vertically */
+            align-items: center;
+        }
+        .nav.justify-content-center .nav-item {
+            width: 90%; /* Make buttons take most of the width */
+            margin-bottom: 5px !important; /* Add space between buttons */
+        }
+    }
 </style>
 
 <body style="background-color: gray;">
-  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" style="background-color: #e3f2fd;">
-  <div class="container">
-    <a class="navbar-brand" href="http://www.tatc.ac.th" target="_blank"><div><img src="img/logoTATC.png" alt="logoTATC" style="width: 50px; height: 50px;">Thai-Austrian</div></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">สมาชิก</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            ข้อมูลเพิ่มเติม
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">สมัครสมาชิก</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">หน้าหลัก</a></li>
-            <li><a class="dropdown-item" href="#">ค้นหาบทความ</a></li>
-            <li><a class="dropdown-item" href="#">อัลบั้มรูปภาพ</a></li>
-            <li><a class="dropdown-item" href="#">เนื้อหาเพิ่มเติม</a></li>
-            <li><a class="dropdown-item" href="#">เพื่อนสมาชิก</a></li>
-          </ul>
-        </li>
-      </ul>
-      
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="bi bi-house-door-fill"></i>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            เข้าสู่ระบบ</i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" style="background-color: #e3f2fd;">
+        <div class="container">
+            <a class="navbar-brand" href="http://www.tatc.ac.th" target="_blank"><div><img src="img/logoTATC.png" alt="logoTATC" style="width: 50px; height: 50px;">Thai-Austrian</div></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">สมาชิก</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ข้อมูลเพิ่มเติม
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">สมัครสมาชิก</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">หน้าหลัก</a></li>
+                            <li><a class="dropdown-item" href="#">ค้นหาบทความ</a></li>
+                            <li><a class="dropdown-item" href="#">อัลบั้มรูปภาพ</a></li>
+                            <li><a class="dropdown-item" href="#">เนื้อหาเพิ่มเติม</a></li>
+                            <li><a class="dropdown-item" href="#">เพื่อนสมาชิก</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-house-door-fill"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            เข้าสู่ระบบ</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<!--slide carousel -->
-<div class="container my-3">
-<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="2000">
-      <img src="img/B5.jpg" class="d-block w-100" alt="B2">
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="img/B6.jpg" class="d-block w-100" alt="B3">
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-      <img src="img/B7.jpg" class="d-block w-100" alt="B4">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+    <div class="container my-3">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <img src="img/B5.jpg" class="d-block w-100" alt="B2">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="img/B6.jpg" class="d-block w-100" alt="B3">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="img/B7.jpg" class="d-block w-100" alt="B4">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
-<!-- navbar2-->
-<ul class="nav justify-content-center bg-dark my-3">
-  <li class="nav-item mx-2">
-    <a class="nav-link btn btn-light" aria-current="page" href="#">หน่วยงานการศึกษา</a>
-  </li>
-  <li class="nav-item mx-2">
-    <a class="nav-link btn btn-light" href="#">ฝ่ายบริหารทรัพยากร</a>
-  </li>
-  <li class="nav-item mx-2">
-    <a class="nav-link btn btn-light" href="#">ฝ่ายวิชาการ</a>
-  </li>
-  <li class="nav-item mx-2">
-    <a class="nav-link btn btn-light" href="#">ฝ่ายแผนงานและความร่วมมือ</a>
-  </li>
-  <li class="nav-item mx-2">
-    <a class="nav-link btn btn-light" href="#">ฝ่ายพัฒนากิจการนักเรียนนักศึกษา</a>
-  </li>
-  <li class="nav-item mx-2">
-    <a class="nav-link btn btn-light" href="#">ITA/ข้อมูลสาธราณะ</a>
-  </li>
-</ul>
-</div>
+        <ul class="nav justify-content-center bg-dark my-3">
+            <li class="nav-item mx-2">
+                <a class="nav-link btn btn-light" aria-current="page" href="#">หน่วยงานการศึกษา</a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link btn btn-light" href="#">ฝ่ายบริหารทรัพยากร</a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link btn btn-light" href="#">ฝ่ายวิชาการ</a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link btn btn-light" href="#">ฝ่ายแผนงานและความร่วมมือ</a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link btn btn-light" href="#">ฝ่ายพัฒนากิจการนักเรียนนักศึกษา</a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link btn btn-light" href="#">ITA/ข้อมูลสาธราณะ</a>
+            </li>
+        </ul>
+    </div>
 
-<!-- content-->
- <div class="m-4 text-center">
-<div class="row" style="margin: 10px;">
-  <div style="margin: 10px; border-radius: 5px;" class="col-3 bg-white">
-    <div class="container">
-      <img src="img/logoTATC.png" alt="logo" width="150">
-      <h5>วิทยาลัยเทคนิคสัตหีบ</h5>
-      <div>กม. 160 193 หมู่ 3 ต.นาจอมเทียน</div>
-      <div>อ.สัตหีบ จ.ชลบุรี 20250</div>
-      <div>โทรศัพท์ 038-232-100</div>
-      <div>โทรสาร 038-232-100</div>
-      <div>อีเมล sarabun@tatc.ac.th</div>
-    </div>
-  </div>
-  <div style="margin: 10px; border-radius: 5px;" class="col-5 bg-white">
-    <img src="img/C1.PNG" alt="content" width="100%">
-  </div>
+    <div class="m-4 text-center">
+        <div class="row content-row" style="margin: 10px;">
+            <div style="margin: 10px; border-radius: 5px;" class="col-md-3 bg-white">
+                <div class="container">
+                    <img src="img/logoTATC.png" alt="logo" width="150">
+                    <h5>วิทยาลัยเทคนิคสัตหีบ</h5>
+                    <div>กม. 160 193 หมู่ 3 ต.นาจอมเทียน</div>
+                    <div>อ.สัตหีบ จ.ชลบุรี 20250</div>
+                    <div>โทรศัพท์ 038-232-100</div>
+                    <div>โทรสาร 038-232-100</div>
+                    <div>อีเมล sarabun@tatc.ac.th</div>
+                </div>
+            </div>
+            <div style="margin: 10px; border-radius: 5px;" class="col-md-5 bg-white">
+                <img src="img/C1.PNG" alt="content" width="100%">
+            </div>
 
-  <div style="margin: 10px; border-radius: 5px;" class="col-3 bg-white">
-    <img src="img/D1.PNG" alt="content" width="100%">
-  </div>
-  <div style="margin: 10px; border-radius: 5px;" class="col-3 bg-white">
-    <div class="container">
-      <img src="img/A1.PNG" alt="logo" width="100%">
+            <div style="margin: 10px; border-radius: 5px;" class="col-md-3 bg-white">
+                <img src="img/D1.PNG" alt="content" width="100%">
+            </div>
+            <div style="margin: 10px; border-radius: 5px;" class="col-md-3 bg-white">
+                <div class="container">
+                    <img src="img/A1.PNG" alt="logo" width="100%">
+                </div>
+                <div class="container">
+                    <img src="img/A2.PNG" alt="logo" width="100%">
+                </div>
+                <div class="container">
+                    <img src="img/A3.PNG" alt="logo" width="100%">
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container">
-      <img src="img/A2.PNG" alt="logo" width="100%">
-    </div>
-    <div class="container">
-      <img src="img/A3.PNG" alt="logo" width="100%">
-    </div>
-</div>
-<footer>นายทัพพ์จิรัฐ กาญจนเกตุ 010</footer>
-</div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <footer>นายทัพพ์จิรัฐ กาญจนเกตุ 010</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>
